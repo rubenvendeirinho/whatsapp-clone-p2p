@@ -247,7 +247,8 @@ Este projeto **não foi sujeito a uma auditoria de segurança completa**. Não o
 
 Issues e pull requests são bem-vindos. Antes de submeter, corre `npm run lint` e `npm test`.
 
-## 📄 Licença
+Desenvolvido por Ruben Vendeirinho
+## 📄 Licença 
 
 The MIT License (MIT)
 
