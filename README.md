@@ -1,7 +1,8 @@
 # 💬 WhatsApp P2P
 
-Aplicação clone de WhatsApp P2P (ponto a ponto) tempo real **sem base de dados no servidor** e **sem serviços de autenticação externos**, ligação e comunicações extremamente rápidas permitindo todas as funcionalidades existente no whatsapp convencional como, mensagens de texto, mensagens de voz, ficheiros e chamadas de voz/vídeo, tudo ponto a ponto utilizando WebRTC.
-Ideal para grupos de trabalho estudo, empresas etc que pretendam obter estas funcionalidade num ambiente extremamente leve onde o servidor (pc, pcb, ou smartphone) mal sente o peso do serviço, já que ele utiiza recursos mínimos para o funcionamento, sendo o maior peso processado pelo browser/navegador web dos clientes.
+Aplicação tipo/clone do WhatsApp 100% P2P (ponto a ponto) e em tempo real que recria todas as funcionalidade existentes na app Whatsapp mas **sem base de dados no servidor** e **sem serviços de autenticação externos**, ligação e comunicações extremamente rápidas.
+Funcionalidades existentes: Mensagens de texto, mensagens de voz, ficheiros e chamadas de voz/vídeo, tudo ponto a ponto utilizando WebRTC.
+Ideal para grupos de trabalho, estudo, culturais ou recreativos, empresas, etc que pretendam obter estas funcionalidade em ambiente independente, privado e seguro, exposto à Internet se necessário e extremamente leve a nível de recursos, onde o servidor (pc, pcb, ou smartphone) mal sente o peso do serviço, já que ele utiliza recursos mínimos para o funcionamento, sendo o maior peso processado pelo browser/navegador web dos clientes.
 
 Tecnologias utilizadas
 ![React](https://img.shields.io/badge/React-18-61dafb?logo=react&logoColor=white)
