@@ -2,7 +2,7 @@
 
 Aplicação tipo/clone do WhatsApp 100% P2P (ponto a ponto) e em tempo real que recria todas as funcionalidade existentes na app Whatsapp mas **sem base de dados no servidor** e **sem serviços de autenticação externos**, ligação e comunicações extremamente rápidas.
 Funcionalidades existentes: Mensagens de texto, mensagens de voz, ficheiros e chamadas de voz/vídeo, tudo ponto a ponto utilizando WebRTC.
-Ideal para grupos de trabalho, estudo, culturais ou recreativos, empresas, etc que pretendam obter estas funcionalidade em ambiente independente, privado e seguro, exposto à Internet se necessário e extremamente leve a nível de recursos, onde o servidor (pc, pcb, ou smartphone) mal sente o peso do serviço, já que ele utiliza recursos mínimos para o funcionamento, sendo o maior peso processado pelo browser/navegador web dos clientes.
+Ideal para grupos de trabalho, estudo, culturais ou recreativos, empresas, etc que pretendam obter estas funcionalidade em ambiente independente, privado e seguro, exposto à Internet se necessário e extremamente leve a nível de recursos, onde o servidor (pc, pcb, ou em termux num android smartphone) mal sente o peso do serviço, já que ele utiliza recursos mínimos para o funcionamento, sendo o maior peso processado pelo browser/navegador web dos clientes.
 
 Tecnologias utilizadas
 ![React](https://img.shields.io/badge/React-18-61dafb?logo=react&logoColor=white)
@@ -82,6 +82,74 @@ npm run dev:all
 ```
 
 O `dev:all` inicia o servidor Node e só abre o Vite depois de `/api/health` responder. A app fica em **http://localhost:5173**.
+
+No Android utilizando o Termux:
+
+Preparação
+Instala o Termux a partir do F-Droid ou do GitHub. A versão da Play Store está desatualizada e dá problemas.
+Copia o whatsapp-p2p_V7_full_working.zip para a pasta Transferências do telemóvel.
+No Termux:
+bash
+pkg update && pkg upgrade
+pkg install nodejs git unzip
+termux-setup-storage          # aceita a permissão de ficheiros
+cp ~/storage/downloads/whatsapp-p2p_V7_full_working.zip ~
+unzip whatsapp-p2p_V7_full_working.zip
+cd whatsapp-p2p_V7_full_working
+Opção A (recomendada): compilar uma vez e servir com Node
+
+É a mais leve, porque o servidor Node já serve a app compilada (dist/) e a sinalização na mesma porta.
+
+bash
+npm install
+npm run server:install
+npm run build
+node server/index.js
+
+Depois abre http://localhost:5000 no Chrome do próprio telemóvel. O localhost conta como contexto seguro, por isso microfone, câmara e WebCrypto funcionam sem HTTPS.
+
+Se o npm install falhar no Termux, podes compilar no PC (npm run build) e copiar a pasta inteira, com dist/, para o telemóvel. Aí só precisas de npm run server:install e node server/index.js.
+
+Para outros dispositivos usarem a tua app
+
+Precisas de um túnel HTTPS para a porta 5000.
+
+bash
+pkg install cloudflared
+cloudflared tunnel --url http://localhost:5000
+
+O comando mostra um URL https://….trycloudflare.com, que os outros utilizadores abrem. Escolhi o cloudflared porque o ngrok costuma dar erros de DNS no Termux. No modo node server/index.js não é preciso configurar TUNNEL_HOSTS, porque essa restrição é do Vite.
+
+Dois avisos:
+
+Os dados (identidade, contactos, histórico) ficam ligados ao endereço. localhost:5000 e o URL do túnel são identidades diferentes, e o URL do cloudflared muda de cada vez que o reinicias. Por isso, quem usa o túnel deve criar a identidade já nesse URL, e perde-a se ele mudar.
+Se tiveres problemas de ligação, define ALLOWED_ORIGINS=https://o-teu-url antes de arrancar o servidor.
+Opção B: modo de desenvolvimento completo
+bash
+npm install
+npm run server:install
+npm run dev:all
+
+Funciona em teoria, mas o Vite usa binários nativos (esbuild, rollup) e é aqui que o Termux costuma dar erro. Se aparecer algo como “esbuild: failed to install correctly”:
+
+bash
+pkg install esbuild
+export ESBUILD_BINARY_PATH=$(which esbuild)
+
+Neste modo precisas de TUNNEL_HOSTS com o host do túnel, e o ngrok com domínio fixo é mais prático do que o cloudflared.
+
+Para o Android não matar o servidor
+bash
+termux-wake-lock
+
+Desativa também a otimização de bateria do Termux nas definições. Mesmo assim, o Android 12 ou superior pode terminar processos em segundo plano, e a app deixa de receber mensagens quando isso acontece.
+
+Limitações
+Chamadas, ficheiros e mensagens offline dependem do servidor estar ligado, ou seja, do telemóvel acordado e com rede.
+Sem servidor TURN, as chamadas podem falhar em redes móveis com NAT restritivo.
+Se quiseres usar a conta por email, define GMAIL_USER e GMAIL_APP_PASSWORD com export antes de arrancar o servidor, ou num ficheiro .env.local.
+
+
 
 ### Testar entre dispositivos (ngrok)
 
