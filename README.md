@@ -1,4 +1,4 @@
-# 💬 WhatsApp P2P
+# 💬 WhatsApp clone P2P
 
 Aplicação tipo/clone do WhatsApp 100% P2P (ponto a ponto) e em tempo real que recria todas as funcionalidade existentes na app Whatsapp mas **sem base de dados no servidor** e **sem serviços de autenticação externos**, ligação e comunicações extremamente rápidas em ambiente local (nat) ou na Internet com recurso a túnel ngrok, tailscail ou outro.
 Funcionalidades existentes: Mensagens de texto, mensagens de voz, ficheiros e chamadas de voz/vídeo, tudo ponto a ponto utilizando WebRTC.
