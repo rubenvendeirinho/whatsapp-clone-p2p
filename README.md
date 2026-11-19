@@ -1,9 +1,8 @@
 # 💬 WhatsApp clone P2P
-# App com 100% das funcionalidades do Whatsapp a funcionar em ponto a ponto, sem servidores externos, a app #funciona como WhatsApp p2p web, possibilitando ser utilizada em PC, MAC, IPhone, Linux, Android e tem uma 
-#app em Android, permite criar e iniciar um servidor de identificações encriptadas, permitindo à app cliente/ 
-#utilizadores acesso à listagem dos "números" virtuais, que são ids de 20 caracteres 10bits, permitindo-lhe #interagirem ponto a ponto a alta velocidade, no caso, se pela Internet, utilizando e o "tunneling", o "ssh #to https", o "ngrok" ou outro, a app comunica um túnel encriptado e veloz ponto a ponto, sem servidores nem #serviços
+# App com 100% das funcionalidades do Whatsapp a funcionar em ponto a ponto, sem servidores externos, a app #funciona como WhatsApp p2p web, em PC, MAC, IPhone, Linux, Android e tem uma app em Android.
 #( App por Ruben Vendeirinho @rubenvendeirinho https://www.facebook.com/rubenvendeirinho ) 
-# O fim do mundo pode vir, mas enquanto não acabar, continuaremos a comunicar!
+# O fim do mundo pode vir, mas enquanto o mundo não acabar, continuaremos a comunicar!
+
 Aplicação tipo/clone do WhatsApp 100% ponto a ponto (p2p) e em tempo real que recria todas as funcionalidade existentes na app Whatsapp mas **sem base de dados no servidor** e **sem serviços de autenticação externos**, ligação e comunicações extremamente rápidas em ambiente rede local ou na Internet com recurso a túnel ngrok, tailscail ou outro para publicar em https e disponibilizar acesso a clientes, seja web ou por app android.
 Funcionalidades existentes: Mensagens de texto, mensagens de voz, ficheiros e chamadas de voz/vídeo, grupos, tudo ponto a ponto utilizando WebRTC.
 Ideal para grupos de trabalho, estudo, culturais ou recreativos, empresas, etc que pretendam obter estas funcionalidade em ambiente independente, privado e seguro, exposto à Internet se necessário e extremamente leve a nível de recursos, onde o servidor (pc, pcb, ou em termux num android smartphone) mal sente o peso do serviço, já que ele utiliza recursos mínimos para o funcionamento, sendo o maior peso processado pelo browser/navegador web dos clientes.
@@ -256,7 +255,7 @@ Desenvolvido por Ruben Vendeirinho
 
 The MIT License (MIT)
 
-Copyright (c) <year> Adam Veldhousen
+Copyright (c) <year> Ruben Vendeirinho
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
