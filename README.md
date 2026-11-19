@@ -1,7 +1,9 @@
 # 💬 WhatsApp clone P2P
-# O fim do mundo pode vir, mas enquanto não acabar, continuaremos a comunicar!
-Aplicação tipo/clone do WhatsApp 100% P2P (ponto a ponto) e em tempo real que recria todas as funcionalidade existentes na app Whatsapp mas **sem base de dados no servidor** e **sem serviços de autenticação externos**, ligação e comunicações extremamente rápidas em ambiente local (nat) ou na Internet com recurso a túnel ngrok, tailscail ou outro.
-Funcionalidades existentes: Mensagens de texto, mensagens de voz, ficheiros e chamadas de voz/vídeo, tudo ponto a ponto utilizando WebRTC.
+# App com 100% das funcionalidades do Whatsapp a funcionar em ponto a ponto, sem servidores externos, a app #funciona como WhatsApp p2p web, possibilitando ser utilizada em IPhone  e em Android. 
+#( App por Ruben Vendeirinho @rubenvendeirinho https://www.facebook.com/rubenvendeirinho ) 
+# O mundo pode começar a acabar, mas enquanto acabar, continuaremos a comunicar!
+Aplicação tipo/clone do WhatsApp 100% ponto a ponto (p2p) e em tempo real que recria todas as funcionalidade existentes na app Whatsapp mas **sem base de dados no servidor** e **sem serviços de autenticação externos**, ligação e comunicações extremamente rápidas em ambiente rede local ou na Internet com recurso a túnel ngrok, tailscail ou outro para publicar em https e disponibilizar acesso a clientes, seja web ou por app android.
+Funcionalidades existentes: Mensagens de texto, mensagens de voz, ficheiros e chamadas de voz/vídeo, grupos, tudo ponto a ponto utilizando WebRTC.
 Ideal para grupos de trabalho, estudo, culturais ou recreativos, empresas, etc que pretendam obter estas funcionalidade em ambiente independente, privado e seguro, exposto à Internet se necessário e extremamente leve a nível de recursos, onde o servidor (pc, pcb, ou em termux num android smartphone) mal sente o peso do serviço, já que ele utiliza recursos mínimos para o funcionamento, sendo o maior peso processado pelo browser/navegador web dos clientes.
 
 Tecnologias utilizadas
@@ -15,7 +17,7 @@ Tecnologias utilizadas
 ---
 
 ## ✨ Funcionalidades
-
+- Web e App Android, ap apk necessita ser compilada. (eu utilizei o Android Studio) 
 - **Identidade sem contas nem passwords.** No primeiro uso, o browser gera um par de chaves ECDSA P-256. O **ID** (20 caracteres, 100 bits) é um hash da chave pública.
 - **Texto em tempo real**, incluindo conversas de grupo (envio individual a cada membro).
 - **Mensagens de voz** (gravar, enviar, reproduzir). Voz de contactos guardados é aceite automaticamente; a de desconhecidos pede confirmação.
