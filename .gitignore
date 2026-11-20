@@ -1,0 +1,31 @@
+node_modules
+dist
+dist-ssr
+*.local
+.env
+.env.*
+!.env.example
+logs
+*.log
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+
+# Dados de contas por email (cópias cifradas, não publicar)
+server/data/
+
+# Android (Capacitor): gerado por `npm run android:init` / `android:build`
+android/.gradle
+android/build
+android/app/build
+android/local.properties
+android/captures
+android/app/src/main/assets/public
+android/app/src/main/assets/capacitor.*.json
+android/capacitor-cordova-android-plugins
+*.apk
+*.aab
+
+# Agente do ngrok (cada pessoa usa o seu; não redistribuir)
+mobile/vendor/

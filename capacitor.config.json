@@ -1,0 +1,21 @@
+{
+  "appId": "app.whatsappp2p",
+  "appName": "WhatsUp-p2p V9",
+  "webDir": "dist",
+  "server": {
+    "androidScheme": "http",
+    "cleartext": true
+  },
+  "android": {
+    "allowMixedContent": true
+  },
+  "plugins": {
+    "CapacitorNodeJS": {
+      "nodeDir": "nodejs",
+      "startMode": "manual"
+    },
+    "SystemBars": {
+      "insetsHandling": "css"
+    }
+  }
+}

@@ -5,7 +5,12 @@ import reactHooks from 'eslint-plugin-react-hooks'
 import reactRefresh from 'eslint-plugin-react-refresh'
 
 export default [
-  { ignores: ['dist', 'node_modules', 'server/node_modules'] },
+  { ignores: ['dist', 'node_modules', 'server/node_modules', 'android'] },
+  {
+    files: ['mobile/**/*.js'],
+    languageOptions: { ecmaVersion: 2022, sourceType: 'commonjs', globals: globals.node },
+    rules: { ...js.configs.recommended.rules },
+  },
   {
     files: ['server/**/*.js', 'scripts/**/*.mjs', 'test/**/*.js', 'test/**/*.mjs', 'vite.config.js', 'tailwind.config.js', 'postcss.config.js'],
     languageOptions: { ecmaVersion: 2022, sourceType: 'module', globals: globals.node },
