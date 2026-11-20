@@ -4,6 +4,7 @@ Funciona como web app em PC, Mac, Linux, iPhone e Android, e tem uma app Android
 > *O fim do mundo pode vir, mas enquanto o mundo não acabar, continuaremos a comunicar!*
 >
 > App por **Ruben Vendeirinho** ([@rubenvendeirinho] (https://www.facebook.com/rubenvendeirinho))
+
 ![React](https://img.shields.io/badge/React-18-61dafb?logo=react&logoColor=white)
 ![Vite](https://img.shields.io/badge/Vite-6-646cff?logo=vite&logoColor=white)
 ![Tailwind](https://img.shields.io/badge/Tailwind-3-38bdf8?logo=tailwindcss&logoColor=white)
